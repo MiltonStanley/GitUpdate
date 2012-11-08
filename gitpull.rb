@@ -10,13 +10,4 @@ end
 mode = true if ARGV[0] == '-t' || ARGV[0] == '-true' || ARGV[0] == 't' || ARGV[0] == 'true'
 mode = false unless mode
 
-
-
-print "Your password: "
-PASSWORD = gets.chomp
-puts PASSWORD
-
-
-
-
 pull() unless mode
