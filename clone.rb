@@ -1,5 +1,5 @@
 # deprecated: Quandrax_1.1.0 Quandrax_Cpp OrderServer tester
-repos = %w[Quandrax CPP_In_21_Days GitUpdate Synthduino tester Mythrealm RGB_Strip RecipeBook]
+repos = %w[Quandrax CPP_In_21_Days GitUpdate Synthduino Mythrealm RGB_Strip RecipeBook]
 
 repos.each do |repo|
 	system "cd .. && git clone http://www.github.com/MiltonStanley/#{repo}.git"
