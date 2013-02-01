@@ -4,6 +4,10 @@ class String
     self.include? "nothing to commit (working directory clean)"
   end
 
+  def not_a_repo?
+    self.include? "Not a git repository"
+  end
+
   def untracked_files_present?
     self.include? "Untracked files:"
   end
@@ -17,10 +21,16 @@ end
 def status
   *repos = `cd .. && ls`.split "\n"
   repos.each do |repo|
+    puts "REPO: #{repo}"
     output = `cd .. && cd #{repo} && git status`
+    puts "OUTPUT: #{output}"
     legal = false
     if output.up_to_date?
       puts "#{repo} up-to-date" if output.up_to_date?
+      legal = true
+    end
+    if output.not_a_repo?
+      puts "#{repo} is not a Git repository!"
       legal = true
     end
     if output.untracked_files_present?
