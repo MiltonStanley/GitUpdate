@@ -10,3 +10,6 @@ TODO
 1. Automatically find all repos for the given user
 2. Handle branches in push and pull
 4. Make Gitupdate handle everything (update self, then push/pull as needed)
+
+- Do it like Git for Windows - sync (pull, push as needed) plus branch options
+- maybe "start" and "end" for sessions - start pulls, end commits and pushes?
